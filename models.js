@@ -26,14 +26,14 @@ const Vegetable  = db.define('vegetables', {
     type: Sequelize.DATE
   }
 
-})
+});
 
 const Plot = db.define('plots', {
   name: {
     type: Sequelize.STRING,
     allowNull: false
   },
-})
+});
 
 Vegetable.belongsToMany(Plot, {through: 'vegetable_plot'});
 Plot.belongsToMany(Vegetable, {through: 'vegetable_plot'});
